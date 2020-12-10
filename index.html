@@ -19,16 +19,18 @@
     <div id="root">
         
         <h1>ToDo list Vue</h1>
-        <div class="list-input">
-            <input v-model="toDo" type="text" placeholder="Inserisci qualcosa da fare">
-            <button @click="add">Aggiungi</button>
+        <div class="wrapper">
+            <div class="list-input">
+                <input @keydown.enter="add" v-model="toDo" type="text" placeholder="Inserisci qualcosa da fare">
+                <button @click="add">Aggiungi</button>
+            </div>
+            <div class="list">
+                <ul>
+                    <li v-for="(element) in list">{{element}}<span class="delete" @click="remove(element)">X</span></li>
+                </ul>
+            </div>
         </div>
-        <div class="list">
-            <ul>
-                <li v-for="(element) in list">{{element}}<span class="delete" @click="remove(element)">X</span></li>
-            </ul>
-        </div>
-
+        
     </div>
 
     <!-- my js -->

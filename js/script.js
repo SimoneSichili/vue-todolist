@@ -15,12 +15,14 @@ var app = new Vue(
         },
         methods: {
             add: function () {
-                this.list.push(this.toDo);
-                this.toDo = "";
+                if (this.toDo != "") {
+                    this.list.push(this.toDo);
+                    this.toDo = "";
+                }
             },
             remove: function(item){
                 this.list.splice(this.list.indexOf(item), 1);
-            },     
+            },
         },
     }
 );
