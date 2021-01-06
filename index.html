@@ -18,15 +18,15 @@
 <body>
     <div id="root">
         
-        <h1>ToDo list Vue</h1>
+        <h1>TODO LIST VUE</h1>
         <div class="wrapper">
             <div class="list-input">
-                <input @keydown.enter="add" v-model="toDo" type="text" placeholder="Inserisci qualcosa da fare">
-                <button @click="add">Aggiungi</button>
+                <input @keydown.enter="addTask" v-model="toDo" type="text" placeholder="Inserisci qualcosa da fare">
+                <button @click="addTask">Aggiungi</button>
             </div>
             <div class="list">
                 <ul>
-                    <li v-for="(element) in list">{{element}}<span class="delete" @click="remove(element)">X</span></li>
+                    <li v-for="(element, index) in list">{{element}}<span class="delete" @click="removeTask(index)"><i class="fas fa-trash"></i></span></li>
                 </ul>
             </div>
         </div>

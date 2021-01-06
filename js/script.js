@@ -14,14 +14,17 @@ var app = new Vue(
            toDo: "",
         },
         methods: {
-            add: function () {
+            addTask: function () {
                 if (this.toDo != "") {
                     this.list.push(this.toDo);
                     this.toDo = "";
                 }
             },
-            remove: function(item){
-                this.list.splice(this.list.indexOf(item), 1);
+            // remove: function(item){
+            //     this.list.splice(this.list.indexOf(item), 1);
+            // },
+            removeTask: function(indexToRemove){
+                this.list.splice(indexToRemove, 1);
             },
         },
     }
